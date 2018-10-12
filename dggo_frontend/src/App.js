@@ -1,12 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
-import NavBar from './components/NavBar';
-import Home from './components/Home';
-import About from './components/About';
-// import Modal from './components/Modal';
-import Button from '@material-ui/core/Button';
-import Modal from '@material-ui/core/Modal';
 import ButtonAppBar from './components/ButtonAppBar';
 import TabContainer from './components/TabContainer';
 import SimpleModal from './components/SimpleModal';
@@ -58,12 +51,6 @@ class App extends Component {
     });
   };
 
-  toggleModal = () => {
-    this.setState({
-      showModal: !this.state.showModal
-    })
-  }
-
   handleLoginSubmit = (e) => {
     e.preventDefault()
     console.log(this.state)
@@ -103,7 +90,11 @@ class App extends Component {
     return (
 
       <div className="container">
-         <ButtonAppBar loggedIn = {this.state.isLoggedIn} toggleModal={this.toggleModal} handleLoginSubmit={this.handleLoginSubmit} handleChange={this.handleChange} handleLogOut = {this.handleLogOut}/>
+         <ButtonAppBar loggedIn = {this.state.isLoggedIn} 
+         handleLoginSubmit={this.handleLoginSubmit} 
+         handleChange={this.handleChange} 
+         handleLogOut = {this.handleLogOut} />
+         
          <TabContainer/>
       </div>
    

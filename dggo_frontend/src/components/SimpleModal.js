@@ -58,13 +58,8 @@ class SimpleModal extends React.Component {
           onClose={this.handleClose}
         >
           <div style={getModalStyle()} className={classes.paper}>
-            {/* <Typography variant="h6" id="modal-title">
-              Text in a modal
-            </Typography>
-            <Typography variant="subtitle1" id="simple-modal-description">
-              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-            </Typography> */}
-            <form onSubmit={this.props.handleLoginSubmit} onClose={this.handleClose}>
+
+            <form onSubmit={this.props.handleLoginSubmit} >
                 <h1>Login Page</h1>
                 <label for="uname"><b></b></label><br></br>
                 <input type="text" placeholder="Enter Username" name="uname" required> 
@@ -77,7 +72,6 @@ class SimpleModal extends React.Component {
                 <br></br><button type="submit">Login</button> 
               
           </form>
-
           </div>
         </Modal>
       </div>

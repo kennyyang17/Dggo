@@ -6,6 +6,10 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import TextFields from '../containers/TextFields'
+// import Home from './components/Home';
+// import About from './components/About';
+import Button from '@material-ui/core/Button';
+import Modal from '@material-ui/core/Modal';
 
 function TabContainer(props) {
   return (

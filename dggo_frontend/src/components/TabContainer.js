@@ -6,10 +6,13 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import TextFields from '../containers/TextFields'
-// import Home from './components/Home';
-// import About from './components/About';
+import Home from './Home';
+import About from './About';
 import Button from '@material-ui/core/Button';
 import Modal from '@material-ui/core/Modal';
+import ReservationForm from './ReservationForm'
+import ReservationPage from './ReservationPage'
+
 
 function TabContainer(props) {
   return (
@@ -40,7 +43,7 @@ class SimpleTabs extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes, handleFormSubmit, currentUser } = this.props;
     const { value } = this.state;
 
     return (
@@ -50,19 +53,17 @@ class SimpleTabs extends React.Component {
             <Tab label="Home" />
             <Tab label="About" />
             <Tab label="Menu" />
-            <Tab label="Blog" />
             <Tab label="Gallery" />
             <Tab label="Contact" />
             <Tab label="Reserve" />
           </Tabs>
         </AppBar>
         {value === 0 && <TabContainer>Home</TabContainer>}
-        {value === 1 && <TabContainer>About</TabContainer>}
+        {value === 1 && <TabContainer><About/></TabContainer>}
         {value === 2 && <TabContainer>Menu</TabContainer>}
-        {value === 3 && <TabContainer>Blog</TabContainer>}
-        {value === 4 && <TabContainer>Gallery</TabContainer>}
-        {value === 5 && <TabContainer>Contact</TabContainer>}
-        {value === 6 && <TabContainer>Reserve<TextFields/></TabContainer>}
+        {value === 3 && <TabContainer>Gallery</TabContainer>}
+        {value === 4 && <TabContainer>Contact</TabContainer>}
+        {value === 5 && <TabContainer handleFormSubmit = {handleFormSubmit}>Reserve<ReservationPage currentUser={currentUser}/></TabContainer>}
       </div>
     );
   }

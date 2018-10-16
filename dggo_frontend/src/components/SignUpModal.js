@@ -30,7 +30,7 @@ const styles = theme => ({
   },
 });
 
-class SimpleModal extends React.Component {
+class SignUpModal extends React.Component {
   state = {
     open: false
   };
@@ -50,7 +50,7 @@ class SimpleModal extends React.Component {
     return (
       <div>
         <Typography gutterBottom></Typography>
-        <Button color = "inherit" onClick={this.handleOpen}>Login</Button>
+        <Button color = "inherit" onClick={this.handleOpen}>Sign Up</Button>
         <Modal
           aria-labelledby="simple-modal-title"
           aria-describedby="simple-modal-description"
@@ -59,8 +59,8 @@ class SimpleModal extends React.Component {
           
           <div style={getModalStyle()} className={classes.paper}>
 
-            <form onSubmit={this.props.handleLoginSubmit} >
-                <h1>Login Page</h1>
+            <form onSubmit={this.props.handleSignUpSubmit} >
+                <h1>Sign Up Page</h1>
                 <label for="uname"><b></b></label><br></br>
                 <input type="text" placeholder="Enter Username" name="uname" required> 
                 </input>
@@ -69,7 +69,7 @@ class SimpleModal extends React.Component {
                 <input type="password" placeholder="Enter Password" name="psw" required>
                 </input>
 
-                <br></br><button type="submit">Login</button> 
+                <br></br><button type="submit">Sign Up</button> 
               
           </form>
           </div>
@@ -79,11 +79,11 @@ class SimpleModal extends React.Component {
   }
 }
 
-SimpleModal.propTypes = {
+SignUpModal.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
 // We need an intermediary variable for handling the recursive nesting.
-const SimpleModalWrapped = withStyles(styles)(SimpleModal);
+const SimpleModalWrapped = withStyles(styles)(SignUpModal);
 
 export default SimpleModalWrapped;

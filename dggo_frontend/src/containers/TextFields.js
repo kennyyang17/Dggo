@@ -5,6 +5,10 @@ import { withStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
+import 'react-datepicker/dist/react-datepicker.css';
+
 
 const styles = theme => ({
   container: {
@@ -30,19 +34,21 @@ class TextFields extends React.Component {
     party_size: '',
     date: '',
     time: '',
+    startDate: moment()
   };
 
-  handleChange = name => event => {
+  handleChange = (name, date) => event => {
     this.setState({
       [name]: event.target.value,
+      startDate: date
     });
   };
 
   render() {
-    const { classes } = this.props;
-
+    const { classes, handleFormSubmit } = this.props;
+    console.log(this.props)
     return (
-      <form className={classes.container} noValidate autoComplete="off">
+      <form className={classes.container} onSubmit= {handleFormSubmit} enoValidate autoComplete="off">
         <TextField
           id="standard-party-size"
           label="Party Size"
@@ -50,19 +56,28 @@ class TextFields extends React.Component {
           value={this.state.name}
           margin="normal"
         />
-        <TextField
-          id="standard-Date"
+         <TextField
+          id="standard-party-size"
           label="Date"
           className={classes.textField}
+          value={this.state.name}
           margin="normal"
         />
          <TextField
-          id="standard-Time"
+          id="standard-party-size"
           label="Time"
           className={classes.textField}
+          value={this.state.name}
           margin="normal"
         />
-    <Button>Submit</Button>
+        {/* <DatePicker
+          selected={this.state.startDate}
+          onChange={this.handleChange}
+          showTimeSelect
+          includeTimes={[moment().hours(17).minutes(0), moment().hours(18).minutes(30), moment().hours(19).minutes(30)], moment().hours(17).minutes(30)}
+          dateFormat="LLL"
+        /> */}
+    <Button type="submit">Submit</Button>
       </form>
     );
   }

@@ -61,6 +61,14 @@ class SignUpModal extends React.Component {
 
             <form onSubmit={this.props.handleSignUpSubmit} >
                 <h1>Sign Up Page</h1>
+                <label for="firstName"><b></b></label><br></br>
+                <input type="text" placeholder="Enter First Name" name="fname" required> 
+                </input>
+
+                <label for="lastName"><b></b></label><br></br>
+                <input type="text" placeholder="Enter Last Name" name="lname" required> 
+                </input>
+
                 <label for="uname"><b></b></label><br></br>
                 <input type="text" placeholder="Enter Username" name="uname" required> 
                 </input>
@@ -69,7 +77,11 @@ class SignUpModal extends React.Component {
                 <input type="password" placeholder="Enter Password" name="psw" required>
                 </input>
 
-                <br></br><button type="submit">Sign Up</button> 
+                <label for="phone"><b></b></label><br></br>
+                <input type="text" placeholder="Enter Phone Number" name="phone" required>
+                </input>
+
+                <br></br><Button variant="contained" color="secondary" className={classes.button} type="submit">Sign Up</Button> 
               
           </form>
           </div>

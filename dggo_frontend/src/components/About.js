@@ -1,9 +1,8 @@
 import React from 'react';
 
-
 const About = () => {
   return (
-    <div>
+   <div className="jumbotron">
     ABOUT US
 DDONGGGO POCHA is a Korean style fusion restaurant. We serve a variety of popular street foods one can easily find in the streets of South Korea in a comfortable restaurant setting very unique and fun unlike any other Korean restaurants in the US. POCHA, short for “PO-JANG-MA-CHA”, is perfect place to grab a late night munches and try popular Korean alcoholic beverages such as SO-JU and MAK-KUL-LI with friends and coworkers to kick back and enjoy in a fun-filled environment. 
 

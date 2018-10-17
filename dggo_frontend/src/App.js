@@ -27,10 +27,13 @@ class App extends Component {
   };
 
   handleLogOut = () => {
-    this.setState({ isLoggedIn: false,
-    isSignedUp: false });
+    this.setState({ 
+      isLoggedIn: false,
+      isSignedUp: false
+    });
     // debugger
     localStorage.clear();
+    window.location.reload();
   };
 
   componentDidMount() {
@@ -67,8 +70,11 @@ class App extends Component {
         },
         body: JSON.stringify({
           user: {
-            user_name: e.target[0].value,
-            password: e.target[1].value     
+            first_name: e.target[0].value,
+            last_name: e.target[1].value,
+            user_name: e.target[2].value,
+            password: e.target[3].value,   
+            phone: e.target[4].value,
           }
         })
       })
@@ -80,7 +86,8 @@ class App extends Component {
           this.setState(
             { 
             currentUser: data_with_token.user,
-            isSignedUp: !this.state.isSignedUp   
+            isSignedUp: !this.state.isSignedUp,
+            isLoggedIn: !this.state.isLoggedIn    
           })
       } else {
         localStorage.token = "undefined"
@@ -110,7 +117,8 @@ class App extends Component {
             this.setState(
               { 
               currentUser: data_with_token.user,
-              isLoggedIn: !this.state.isLoggedIn  
+              isLoggedIn: !this.state.isLoggedIn,
+              isSignedUp: !this.state.isSignedUp
             })
         } else {
           localStorage.token = "undefined"

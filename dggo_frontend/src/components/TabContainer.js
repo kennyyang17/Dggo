@@ -8,6 +8,9 @@ import Typography from '@material-ui/core/Typography';
 import TextFields from '../containers/TextFields'
 import Home from './Home';
 import About from './About';
+import Menu from './Menu';
+import Gallery from './Gallery';
+import Contact from './Contact';
 import Button from '@material-ui/core/Button';
 import Modal from '@material-ui/core/Modal';
 import ReservationForm from './ReservationForm'
@@ -58,11 +61,12 @@ class SimpleTabs extends React.Component {
             <Tab label="Reserve" />
           </Tabs>
         </AppBar>
-        {value === 0 && <TabContainer>Home</TabContainer>}
+        
+        {value === 0 && <TabContainer><Home currentUser={currentUser}/></TabContainer>}
         {value === 1 && <TabContainer><About/></TabContainer>}
-        {value === 2 && <TabContainer>Menu</TabContainer>}
-        {value === 3 && <TabContainer>Gallery</TabContainer>}
-        {value === 4 && <TabContainer>Contact</TabContainer>}
+        {value === 2 && <TabContainer><Menu/></TabContainer>}
+        {value === 3 && <TabContainer><Gallery/></TabContainer>}
+        {value === 4 && <TabContainer><Contact/></TabContainer>}
         {value === 5 && <TabContainer handleFormSubmit = {handleFormSubmit}>Reserve<ReservationPage currentUser={currentUser}/></TabContainer>}
       </div>
     );

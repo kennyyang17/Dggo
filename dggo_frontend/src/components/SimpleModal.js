@@ -69,7 +69,7 @@ class SimpleModal extends React.Component {
                 <input type="password" placeholder="Enter Password" name="psw" required>
                 </input>
 
-                <br></br><button type="submit">Login</button> 
+                <br></br><Button variant="contained" color="secondary" className={classes.button} type="submit">Login</Button> 
               
           </form>
           </div>

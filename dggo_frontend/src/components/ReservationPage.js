@@ -70,7 +70,7 @@ class ReservationPage extends React.Component {
 			console.log(data)
 			if (!data.error) {
 			  this.setState({
-				currentUser: data	
+				currentUser: data
 			  });
 			}      
 		  })
@@ -80,15 +80,15 @@ class ReservationPage extends React.Component {
 	render() {
 		return (
 		<div className="row">
-			<div className="col-xs-8">
+			<div className="jumbotron">
 				<h1>Make a reservation</h1>
 				<ReservationForm reservation={this.state.reservation}
 					onSave={this.onSaveForm}
-					onChange={this.onFieldChange} 
+	
 					/>
 			</div>
-			<div className="col-m-4">
-				<ReservationsList reservations={this.state.reservationsList} currentUser = {this.props.currentUser.id}/>
+			<div className="col-lg-3">	 
+			 <ReservationsList reservations={this.state.reservationsList}  currentUser = {this.props.currentUser.id}/>		
 			</div>
 		</div>
 		);

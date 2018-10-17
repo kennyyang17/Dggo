@@ -7,7 +7,8 @@ class ReservationsList extends React.Component {
 		super(props, context);
 
 		this.state = {
-			reservations: []
+			reservations: [],
+			
 		};
 		this.assignSeat = this.assignSeat.bind(this);
 	}
@@ -21,7 +22,8 @@ class ReservationsList extends React.Component {
 		}).then(res=>res.json())
 		.then(data => {
 			this.setState({
-				reservations: data
+				reservations: data,
+				
 			})
 		})
 	}
@@ -40,14 +42,13 @@ class ReservationsList extends React.Component {
 	render(){
 		
 		return (
-			<div>
+			<div>	
 				<h4>Reservations</h4>
 				{this.state.reservations.map(reservation => 
 						(reservation.user_id === this.props.currentUser)
 					? <ReservationView key={reservation.reservationId} reservation={reservation} assignSeat={this.assignSeat} />
 					: null
-					
-				)}
+				)}		
 			</div>
 		);
 	}
